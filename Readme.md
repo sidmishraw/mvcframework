@@ -67,3 +67,11 @@ Answer: The Decorator Pattern
   There will always be scenarios where the data needed by the exectionlogic for the command is not going to be available from the model. Hence having a paramMap is going to take care of that scenario.
 
 * Created an `InstanceFactory` for producing singleton instances of the classes needed.
+
+## [Brick CAD](http://www.cs.sjsu.edu/faculty/pearce/modules/projects/oop/brickCAD/BrickCAD.htm)
+The BrickCAD application is an example application built using the MVC framework. This example application shows how a MVC framework and an application built on it interact.
+
+
+### MIN JDK - v1.8 (This project uses lambdas and streams.)
+
+### MIN Eclipse - v4.5.2 (Mars)
