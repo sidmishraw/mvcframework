@@ -26,25 +26,27 @@ public abstract class View extends JPanel implements Observer {
 	 */
 	private static final long	serialVersionUID	= 1L;
 	
-	private Model				model;
+	private String				name;
 	
-	/**
-	 * 
-	 */
-	public View() {}
+	private Model				model;
 	
 	/**
 	 * @param model
 	 */
-	public View(Model model) {
+	public View(Model model, String name) {
 		
 		this.model = model;
+		this.name = name;
+		
+		// register the view as an observer of the Model
+		this.model.addObserver(this);
 	}
 	
 	/**
 	 * @return the model
 	 */
 	public Model getModel() {
+		
 		return this.model;
 	}
 	
@@ -53,7 +55,24 @@ public abstract class View extends JPanel implements Observer {
 	 *            the model to set
 	 */
 	public void setModel(Model model) {
+		
 		this.model = model;
 	}
 	
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		
+		return this.name;
+	}
+	
+	/**
+	 * @param name
+	 *            the name to set
+	 */
+	public void setName(String name) {
+		
+		this.name = name;
+	}
 }
