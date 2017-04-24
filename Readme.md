@@ -58,8 +58,8 @@ Answer: The Decorator Pattern
   Also the framework takes care of the main execution workflow on its own. The user just needs to provide information of the execution logic.
   
 * The `Command` now doesn't have subclasses, rather it has a part called `ExecuteLogic` that holds the execution logic within, this is called when the command is executed.
-  This way the user doesn't have to write keep making subclasses for each command for just mentioning the logic. Emphasis on the `code as data` principle.
-  Although this might go against the Object Oriented Design methodology, I find it to be of more useful in this framework.
+  This way the user doesn't have to keep making subclasses for each command for just mentioning the logic(that's how the framework behaved prior to my modifications). Emphasis is on the `code as data` principle.
+  Although this might go against the Object Oriented Design methodology, I find it to be of more value in this framework.
   
 * `ExecuteLogic` is a functional interface in Java, makes writing the executionlogic easier using lambda expressions.
 
