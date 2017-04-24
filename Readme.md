@@ -16,15 +16,17 @@ The model belongs to the application package. It encapsulates business logic, ru
 
 More often, the model is a collection of related entity classes.
 
-```Policy, Claim, PolicyHolder ...
-
-Treatment, Patient, Test ...
-
-Auction, Bidder, Bid, Item ...
-
-Dungeon, Weapon, Character ...
-
-etc.```
+```
+	Policy, Claim, PolicyHolder ...
+	
+	Treatment, Patient, Test ...
+	
+	Auction, Bidder, Bid, Item ...
+	
+	Dungeon, Weapon, Character ...
+	
+	etc.
+```
 
 Views and controllers (there may be many) belong to the presentation package.
 
@@ -51,7 +53,7 @@ Answer: The Memento Pattern
 Answer: The Decorator Pattern
 
 
-## My modifications:
+## My modifications (Changelog):
 * Modified how the memento is made from the model. My method uses reflection to build a memento from the model. Using this it is possible to hide the complexities from the user of the framework.
   Also the framework takes care of the main execution workflow on its own. The user just needs to provide information of the execution logic.
   
