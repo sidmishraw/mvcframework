@@ -96,9 +96,9 @@ public class FileMenuService {
 		
 		try (ObjectInputStream is = new ObjectInputStream(new FileInputStream(fileName))) {
 			
-			model = (Model) is.readObject();
+			Model newModel = (Model) is.readObject();
+			model.accept(newModel.makeMemento());
 			model.setUnsavedChanges(false);
-			
 		} catch (Exception e) {
 			
 			Utility.error(e.getMessage());

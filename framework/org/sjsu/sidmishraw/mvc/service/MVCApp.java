@@ -220,6 +220,8 @@ public class MVCApp extends JFrame implements ActionListener {
 				return;
 			case Constant.OPEN:
 				this.model = FileMenuService.open(this.model);
+				// let the views know that the model has changed
+				this.model.changed();
 				this.commandProcessor.emptyUndoRedoStack();
 				return;
 			case Constant.NEW:
