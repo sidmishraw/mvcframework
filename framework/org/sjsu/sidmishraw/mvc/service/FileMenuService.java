@@ -86,6 +86,9 @@ public class FileMenuService {
 	}
 	
 	/**
+	 * Opens the model file and loads the model, restores the model using a
+	 * memento
+	 * from the new loaded model and returns the updated model.
 	 * 
 	 * @param model
 	 */
