@@ -8,6 +8,7 @@
  */
 package org.sjsu.sidmishraw.brickcad.views;
 
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -299,5 +300,14 @@ public class DimensionView extends View {
 		this.length.setText(((Brick) this.getModel()).getLength().toString());
 		this.width.setText(((Brick) this.getModel()).getWidth().toString());
 		this.height.setText(((Brick) this.getModel()).getHeight().toString());
+		
+		this.setPreferredSize(new Dimension(350, 250));
 	}
+	
+	@Override
+	public Dimension getPreferredSize() {
+		
+		return new Dimension(350, 250);
+	}
+	
 }

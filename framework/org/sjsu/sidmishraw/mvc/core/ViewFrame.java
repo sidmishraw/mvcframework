@@ -8,8 +8,6 @@
  */
 package org.sjsu.sidmishraw.mvc.core;
 
-import java.awt.Dimension;
-
 import javax.swing.JInternalFrame;
 
 /**
@@ -47,9 +45,11 @@ public class ViewFrame extends JInternalFrame {
 		setTitle(view.getName());
 		setContentPane(view);
 		
-		setPreferredSize(new Dimension(350, 250));
+		setPreferredSize(view.getPreferredSize());
 		
 		setLocation(30 * openFrameCount, 30 * openFrameCount);
+		
+		// System.out.println("My name is " + this.toString());
 		
 		pack();
 	}

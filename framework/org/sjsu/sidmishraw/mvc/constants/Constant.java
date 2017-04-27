@@ -27,8 +27,8 @@ public class Constant {
 	public static final String	UNDO		= "Undo";
 	public static final String	REDO		= "Redo";
 	public static final String	QUIT		= "Quit";
-	public static final String	HELP		= "Help";
-	public static final String	ABOUT		= "About";
+	public static final String	HELP		= "&Help";
+	public static final String	ABOUT		= "&About";
 	
 	// menu bar menu names
 	public static final String	FILE		= "File";

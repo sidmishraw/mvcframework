@@ -78,9 +78,9 @@ public class BrickFactory implements AppFactory {
 				return new TopView(model, TOP_VIEW);
 			case DIMENSIONS_VIEW:
 				return new DimensionView(model, DIMENSIONS_VIEW);
+			default:
+				return new DimensionView(model, DIMENSIONS_VIEW);
 		}
-		
-		return null;
 	}
 	
 	/**

@@ -12,10 +12,15 @@ import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.util.List;
 
+import javax.swing.JDesktopPane;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
+
+import org.sjsu.sidmishraw.mvc.core.Model;
+import org.sjsu.sidmishraw.mvc.core.View;
+import org.sjsu.sidmishraw.mvc.core.ViewFrame;
 
 /**
  * @author sidmishraw
@@ -166,5 +171,35 @@ public class Utility {
 	public static void informUser(String info) {
 		
 		JOptionPane.showMessageDialog(null, info, "Information", JOptionPane.INFORMATION_MESSAGE);
+	}
+	
+	/**
+	 * Makes a default view for the given model
+	 * 
+	 * @param model
+	 * @param desktopPane
+	 */
+	public static void makeDefaultView(View defaultView, Model model, JDesktopPane desktopPane) {
+		
+		View panel = defaultView;
+		
+		ViewFrame vf = new ViewFrame(panel);
+		
+		vf.setVisible(true);
+		
+		desktopPane.add(vf);
+		
+		// System.out.println(vf.getLocationOnScreen().toString());
+		// System.out.println(vf.getSize());
+		// System.out.println(vf.getPreferredSize());
+		
+		try {
+			
+			vf.setSelected(true);
+		} catch (java.beans.PropertyVetoException ex) {
+			
+			ex.printStackTrace();
+		}
+		
 	}
 }

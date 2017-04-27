@@ -9,12 +9,16 @@
 package org.sjsu.sidmishraw.brickcad.views;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.util.Observable;
+
+import javax.swing.SwingUtilities;
 
 import org.sjsu.sidmishraw.brickcad.core.Brick;
 import org.sjsu.sidmishraw.mvc.core.Model;
 import org.sjsu.sidmishraw.mvc.core.View;
+import org.sjsu.sidmishraw.mvc.core.ViewFrame;
 
 /**
  * @author sidmishraw
@@ -60,7 +64,27 @@ public class SideView extends View {
 	@Override
 	public void update(Observable o, Object arg) {
 		
-		repaint();
+		this.repaint();
+		
+		this.setPreferredSize(new Dimension(((Brick) this.getModel()).getWidth().intValue() + 350,
+				((Brick) this.getModel()).getHeight().intValue() + 250));
+		
+		// System.out.println(
+		// "My parent is :: " + ((ViewFrame)
+		// SwingUtilities.getAncestorOfClass(ViewFrame.class,
+		// this)).toString());
+		
+		ViewFrame myparent = ((ViewFrame) SwingUtilities.getAncestorOfClass(ViewFrame.class, this));
+		
+		myparent.setPreferredSize(this.getPreferredSize());
+		
+		myparent.pack();
 	}
 	
+	@Override
+	public Dimension getPreferredSize() {
+		
+		return new Dimension(((Brick) this.getModel()).getWidth().intValue() + 350,
+				((Brick) this.getModel()).getHeight().intValue() + 250);
+	}
 }
